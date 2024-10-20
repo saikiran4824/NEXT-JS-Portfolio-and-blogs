@@ -1,0 +1,27 @@
+# Ignore IDE settings
+.idea/
+.vscode/
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore build outputs
+node_modules/
+build/
+dist/
+
+# Ignore log files
+*.log
+access.log
+error.log
+
+# Ignore virtual environment files
+venv/
+
+# Ignore sensitive data
+.env
+config/secrets.yml
+
+# Specific file
+README.old

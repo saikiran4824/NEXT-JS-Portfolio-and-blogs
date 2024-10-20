@@ -53,20 +53,19 @@ const NavBar = () => {
                 progress={progress}
                 onLoaderFinished={() => setProgress(0)}
             />
-            <div className='text-lg font-bold md:text-xl'>
-                <Link href={"/"}>
-                    ProgrammingWithHarry
+            <div className='text-9xl font-bold md:text-xl'>
+               <h1>
+               <Link href={"/"}>
+                    
                 </Link>
+               </h1>
             </div>
-            <ul className='hidden md:flex w-full justify-end items-center space-x-4 '>
+            <ul className='hidden md:flex w-full  items-center space-x-4 '>
                 <li><Link href={"/"}>Home</Link></li>
-                <li><Link href={"/about"}>About</Link></li>
-                <li><Link href={"/blog"}>Blog</Link></li>
+                <li><Link href={"/about"}>Projects</Link></li>
+                <li><Link href={"/blog"}>My Blogs</Link></li>
                 <li><Link href={"/contact"}>Contact</Link></li>
-                <li className="buttons px-4 space-x-2">
-                    <Link href={"/login"} className={buttonVariants({ variant: "outline" })}>Login</Link>
-                    <Link href={"/login"} className={buttonVariants({ variant: "outline" })}>Sign Up</Link>
-                </li>
+               
 
             </ul>
             <ModeToggle />

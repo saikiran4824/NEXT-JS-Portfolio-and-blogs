@@ -2,7 +2,32 @@ import Image from 'next/image';
 
 export default function About() {
   return (
+    
     <div>
+       <section className="text-gray-600 dark:text-gray-50 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <h2 className="text-4xl pb-8 mb-4 font-bold text-center">About Our Services</h2>
+          <div className="flex flex-wrap -m-4">
+            {/* Service 1 */}
+            <div className="p-4 lg:w-1/3">
+              <div className="h-full bg-gray-200 dark:bg-gray-900 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative shadow-lg">
+                <h2 className="tracking-widest text-xs title-font font-medium mb-1">WEB DEVELOPMENT</h2>
+                <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 dark:text-white mb-3">
+                  Full-Stack Solutions
+                </h1>
+                <p className="leading-relaxed mb-3 text-gray-700 dark:text-gray-50">
+                  Building robust, scalable, and responsive web applications using modern tech stacks like React, Node.js, and more.
+                </p>
+               
+                
+              </div>
+            </div>
+
+            {/* Service 2 */}
+            {/* Add other service sections as needed */}
+          </div>
+        </div>
+      </section>
       <div className="flex flex-col items-center justify-center py-32 bg-gray-100 ">
         <div className="w-full max-w-4xl p-8 bg-white shadow-lg rounded-lg">
           <div className="flex flex-col md:flex-row">
