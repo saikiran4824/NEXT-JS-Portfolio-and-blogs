@@ -10,7 +10,7 @@ const MobileNav = () => {
             <Link href="/" className="hover:text-primary transition-colors font-bold">Home</Link>
             </li>
             <li>
-            <Link href="/about" className="">About</Link>
+            <Link href="/projects" className="">Projects</Link>
             </li>
             <Link href="/blog" className="">Blogs</Link>
 
