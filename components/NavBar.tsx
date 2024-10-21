@@ -62,7 +62,7 @@ const NavBar = () => {
             </div>
             <ul className='hidden md:flex w-full  items-center space-x-4 '>
                 <li><Link href={"/"}>Home</Link></li>
-                <li><Link href={"/about"}>Projects</Link></li>
+                <li><Link href={"/projects"}>Projects</Link></li>
                 <li><Link href={"/blog"}>My Blogs</Link></li>
                 <li><Link href={"/contact"}>Contact</Link></li>
                

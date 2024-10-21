@@ -49,12 +49,7 @@ export default function Home() {
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> 
   </a> 
   
-  <a href="https://babeljs.io/" target="_blank" rel="noreferrer"> 
-    <img src="https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg" alt="babel" width="40" height="40"/> 
-  </a> 
-  <a href="https://expressjs.com" target="_blank" rel="noreferrer"> 
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> 
-  </a>
+  
   
 </p>
 <br></br>
@@ -67,7 +62,7 @@ export default function Home() {
     <br></br>
   
     <p className="flex flex-wrap gap-10">
-      <a>✉️ saikiran4824@gmail.com</a>
+      <a href="mailto:saikiran4824@gmail.com">✉️ saikiran4824@gmail.com</a>
       <a href="https://linkedin.com/in/saikiran4824" target="_blank" rel="noopener noreferrer">
                 <img
                     

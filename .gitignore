@@ -25,3 +25,4 @@ config/secrets.yml
 
 # Specific file
 README.old
+.next
