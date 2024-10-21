@@ -21,8 +21,7 @@ const MobileNav = () => {
             <div className="buttons gap-2 flex text-xsm">
 
            
-            <Link className={buttonVariants({ variant: "secondary" })} href="/login">Login</Link>  
-                <Link className={buttonVariants({ variant: "secondary" })} href="/login">Signup</Link> 
+ 
             </div>
         </ul>
     </div>
