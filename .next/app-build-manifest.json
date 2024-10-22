@@ -11,6 +11,16 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/blog/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/page.js"
+    ],
+    "/blogpost/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blogpost/[slug]/page.js"
+    ],
     "/projects/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -20,11 +30,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/projects/loading.js"
-    ],
-    "/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/page.js"
     ],
     "/contact/page": [
       "static/chunks/webpack.js",

@@ -1,5 +1,5 @@
 const SiteConfig = {
-    "title": "ProgrammingWithHarry",
+    "title": "Sai Kiran",
     "description": "Programming With Harry is a blog for your programming doubts",
     
 }

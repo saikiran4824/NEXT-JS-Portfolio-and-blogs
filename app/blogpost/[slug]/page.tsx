@@ -72,7 +72,7 @@ export async function generateMetadata(
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const {data} = matter(fileContent)
   return {
-    title: `${data.title} - ProgrammingWithHarry`, 
+    title: `${data.title} - Sai Kiran`, 
     description: data.description
   }
 
