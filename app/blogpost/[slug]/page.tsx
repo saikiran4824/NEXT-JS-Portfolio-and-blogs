@@ -1,73 +1,92 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { notFound } from "next/navigation";
-import rehypeFormat from "rehype-format";
-import rehypeStringify from "rehype-stringify";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import { unified } from "unified";
-import rehypePrettyCode from "rehype-pretty-code";
-import { transformerCopyButton } from "@rehype-pretty/transformers";
-import OnThisPage from "@/components/onthispage";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import React from 'react';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkRehype from 'remark-rehype';
+import rehypeSlug from 'rehype-slug';
+import rehypeStringify from 'rehype-stringify';
+import rehypeHighlight from 'rehype-highlight';
+import matter from 'gray-matter';
+import fs from 'fs/promises'; // Use promises-based fs module
+import Onthispage from '@/components/Onthispage';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { rehypePrettyCode } from 'rehype-pretty-code';
+import { transformerCopyButton } from '@rehype-pretty/transformers';
+import { Metadata, ResolvingMetadata } from 'next';
 
-export default async function Page({ params }) {
-  const filepath = path.join(process.cwd(), `content/${params.slug}.md`);
+// Type definition for props
+type Props = {
+  params: { slug: string; title: string; description: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-  if (!fs.existsSync(filepath)) {
-    notFound();
-    return;
-  }
-
-  const fileContent = fs.readFileSync(filepath, "utf-8");
-  const { content, data } = matter(fileContent);
-
+// Blog Page Component
+export default async function BlogPage({ params }: { params: { slug: string } }) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypeFormat)
     .use(rehypeStringify)
     .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings)
     .use(rehypePrettyCode, {
-      theme: "github-dark",
+      theme: 'github-dark',
       transformers: [
         transformerCopyButton({
-          visibility: "always",
+          visibility: 'always',
           feedbackDuration: 3_000,
         }),
       ],
-    });
+    })
+    .use(rehypeAutolinkHeadings);
 
-  const htmlContent = (await processor.process(content)).toString();
+  const filePath = `content/${params.slug}.md`;
 
-  return (
-    <div className="max-w-6xl mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
-      <p className="text-base mb-2 border-l-4 border-gray-500 pl-4 italic">
-        &quot;{data.description}&quot;
-      </p>
-      <div className="flex gap-2">
-        <p className="text-sm text-gray-500 mb-4 italic">By {data.author}</p>
-        <p className="text-sm text-gray-500 mb-4">{data.date}</p>
-      </div>
-      <div
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-        className="prose dark:prose-invert"
-      ></div>
-      <OnThisPage htmlContent={htmlContent} />
-    </div>
-  );
+  try {
+    // Read file content asynchronously
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const { data, content } = matter(fileContent);
+
+    // Process the markdown content to HTML
+    const htmlContent = (await processor.process(content)).toString();
+
+    return (
+      <MaxWidthWrapper className="prose dark:prose-invert">
+        <div className="flex">
+          <div className="px-16">
+            <h1>{data.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+          </div>
+          <Onthispage className="text-sm w-[50%]" htmlContent={htmlContent} />
+        </div>
+      </MaxWidthWrapper>
+    );
+  } catch (error) {
+    console.error(`Error loading file: ${filePath}`, error);
+    return <div>Post not found</div>; // Return a fallback UI in case of error
+  }
 }
 
-// Generate static params for dynamic routing
-export async function generateStaticParams() {
-  const contentDir = path.join(process.cwd(), "content");
-  const files = fs.readdirSync(contentDir);
+// Generate metadata function for SEO
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const filePath = `content/${params.slug}.md`;
 
-  return files.map((file) => ({
-    slug: file.replace(".md", ""),
-  }));
+  try {
+    // Read file content asynchronously
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const { data } = matter(fileContent);
+
+    return {
+      title: `${data.title} - Sai Kiran`,
+      description: data.description,
+    };
+  } catch (error) {
+    console.error(`Error reading metadata for file: ${filePath}`, error);
+    return {
+      title: 'Post Not Found - Sai Kiran',
+      description: 'This post could not be found.',
+    };
+  }
 }
