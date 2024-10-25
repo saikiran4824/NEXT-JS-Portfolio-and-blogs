@@ -2,27 +2,23 @@ import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import React from 'react';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
-import remarkFrontmatter from 'remark-frontmatter';
 import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
-import rehypeHighlight from 'rehype-highlight';
 import matter from 'gray-matter';
-import fs from 'fs/promises'; // Use promises-based fs module
+import fs from 'fs/promises';
+import path from 'path';
 import Onthispage from '@/components/Onthispage';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { rehypePrettyCode } from 'rehype-pretty-code';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
-import { Metadata, ResolvingMetadata } from 'next';
 
-// Type definition for props
 type Props = {
-  params: { slug: string; title: string; description: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: { slug: string };
 };
 
 // Blog Page Component
-export default async function BlogPage({ params }: { params: { slug: string } }) {
+export default async function BlogPage({ params }: Props) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkRehype)
@@ -39,14 +35,12 @@ export default async function BlogPage({ params }: { params: { slug: string } })
     })
     .use(rehypeAutolinkHeadings);
 
-  const filePath = `content/${params.slug}.md`;
+  const filePath = path.join(process.cwd(), 'content', `${params.slug}.md`);
 
   try {
-    // Read file content asynchronously
     const fileContent = await fs.readFile(filePath, 'utf-8');
     const { data, content } = matter(fileContent);
 
-    // Process the markdown content to HTML
     const htmlContent = (await processor.process(content)).toString();
 
     return (
@@ -62,19 +56,15 @@ export default async function BlogPage({ params }: { params: { slug: string } })
     );
   } catch (error) {
     console.error(`Error loading file: ${filePath}`, error);
-    return <div>Post not found</div>; // Return a fallback UI in case of error
+    return <div>Post not found</div>;
   }
 }
 
-// Generate metadata function for SEO
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const filePath = `content/${params.slug}.md`;
+// Generates metadata for the blog post
+export async function generateMetadata({ params }: Props) {
+  const filePath = path.join(process.cwd(), 'content', `${params.slug}.md`);
 
   try {
-    // Read file content asynchronously
     const fileContent = await fs.readFile(filePath, 'utf-8');
     const { data } = matter(fileContent);
 
@@ -89,4 +79,14 @@ export async function generateMetadata(
       description: 'This post could not be found.',
     };
   }
+}
+
+// Generates static paths for each markdown file
+export async function generateStaticParams() {
+  const contentDir = path.join(process.cwd(), 'content');
+  const files = await fs.readdir(contentDir);
+
+  return files.map((file) => ({
+    slug: file.replace(/\.md$/, ''),
+  }));
 }
