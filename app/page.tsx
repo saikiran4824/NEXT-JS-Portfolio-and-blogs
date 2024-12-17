@@ -8,7 +8,7 @@ export default function Home() {
   <div className="bg-white dark:bg-gray-950 flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0 px-4 sm:px-10 md:px-40 lg:px-60">
     <h2 className="text-gray-900 dark:text-white text-2xl mb-3 font-bold title-font">Hey, I am SAI KIRAN</h2>
     <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-      Software Developer | Frontend Enthusiast | JavaScript Developer | React.js | Next.js | React Native | MERN Stack
+    Software Developer | Frontend Enthusiast | JavaScript Developer | React.js | Next.js | React Native | MERN Stack | HTML | Tailwind CSS | CSS | Bootstrap | jQuery
     </p>
     <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
       Strong focus on frontend development using the latest technologies like React and Next.js, I thrive on creating user-friendly, high-performance web solutions that make an impact.
@@ -42,9 +42,7 @@ export default function Home() {
   <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> 
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> 
   </a> 
-  <a href="https://jestjs.io" target="_blank" rel="noreferrer"> 
-    <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/> 
-  </a> 
+  
   <a href="https://nodejs.org" target="_blank" rel="noreferrer"> 
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> 
   </a> 
@@ -81,6 +79,15 @@ export default function Home() {
                     width={40}
                 />
             </a>
+            <a href="https://github.com/saikiran4824" target="_blank" rel="noopener noreferrer">
+  <img
+    src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg"
+    alt="saikiran4824"
+    height="30"
+    width="40"
+  />
+</a>
+
           
         </p>
  </div>

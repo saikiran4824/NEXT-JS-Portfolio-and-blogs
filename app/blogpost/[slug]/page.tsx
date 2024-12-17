@@ -15,13 +15,11 @@ import { rehypePrettyCode } from 'rehype-pretty-code';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
 import { Metadata, ResolvingMetadata } from 'next';
 
-// Type definition for props
 type Props = {
   params: { slug: string; title: string; description: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// Blog Page Component
 export default async function BlogPage({ params }: { params: { slug: string } }) {
   const processor = unified()
     .use(remarkParse)
@@ -42,11 +40,9 @@ export default async function BlogPage({ params }: { params: { slug: string } })
   const filePath = `content/${params.slug}.md`;
 
   try {
-    // Read file content asynchronously
     const fileContent = await fs.readFile(filePath, 'utf-8');
     const { data, content } = matter(fileContent);
 
-    // Process the markdown content to HTML
     const htmlContent = (await processor.process(content)).toString();
 
     return (
@@ -66,11 +62,10 @@ export default async function BlogPage({ params }: { params: { slug: string } })
   }
 }
 
-// Generate metadata function for SEO
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
-): Promise<Metadata> {
+ ): Promise<Metadata> {
   const filePath = `content/${params.slug}.md`;
 
   try {

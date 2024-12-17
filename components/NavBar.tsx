@@ -36,16 +36,12 @@ const NavBar = () => {
         }, 800);
        
     }, [pathname])
-
-    // This runs whenever page loads
     useEffect(() => {
         setTimeout(() => { 
             setProgress(0)
         }, 900);
     }, [])
     
- 
-
     return (
         <nav className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between z-10'>
             <LoadingBar
@@ -53,36 +49,49 @@ const NavBar = () => {
                 progress={progress}
                 onLoaderFinished={() => setProgress(0)}
             />
-            <div className='text-9xl font-bold md:text-xl'>
+            <div className='text-xl -ml-4 font-bold md:text-2xl whitespace-nowrap sm:mr-10'>
+
                <h1>
                <Link href={"/"}>
-                    
+               Sai Kiran Portfolio
                 </Link>
                </h1>
             </div>
-            <ul className='hidden md:flex w-full  items-center space-x-4 '>
-                <li><Link href={"/"}>Home</Link></li>
-                <li><Link href={"/projects"}>Projects</Link></li>
-                <li><Link href={"/blog"}>My Blogs</Link></li>
-                <li><Link href={"/contact"}>Contact</Link></li>
-               
+            <ul className='hidden md:flex w-full items-center -ml-4 justify-end space-x-6'>
+  <li>
+    <Link href="/" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300">
+      Home
+    </Link>
+  </li>
+  <li>
+    <Link href="/projects" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300">
+      My Projects
+    </Link>
+  </li>
+  <li>
+    <Link href="/blog" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300">
+      Blogs
+    </Link>
+  </li>
+  <li>
+    <Link href="/contact" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300 md:mr-6">
+      Contact
+    </Link>
+  </li>
+</ul>
 
-            </ul>
+
+
             <ModeToggle />
-
-            <div className="flex items-center justify-center sm:hidden">
-
+            <div className="flex items-center justify-end sm:hidden">
               <Sheet>
                 <SheetTrigger><Menu /></SheetTrigger>
                 <SheetContent>
-
                   <MobileNav />
-
                 </SheetContent>
               </Sheet>
             </div>
         </nav>
     )
 }
-
 export default NavBar
