@@ -64,7 +64,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
                   <a
                     href="https://saikiran-crypto-chain.vercel.app/"
                     target="_blank"
@@ -130,7 +130,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
                   <a
                     href="https://github.com/saikiran4824/E-Commerce-Application"
                     target="_blank"
@@ -181,7 +181,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
                   <a
                     href="https://github.com/saikiran4824/Netflix-Clone"
                     target="_blank"
@@ -230,7 +230,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
                   <a
                     href="https://saikiran-myntra-responsive-clone-p.vercel.app/"
                     target="_blank"
@@ -284,7 +284,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
                   <a
                     href="https://saikiran-book-catalog.vercel.app/"
                     target="_blank"
@@ -342,7 +342,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
                   <a
                     href="https://saikiran-food-recipe.vercel.app/"
                     target="_blank"
@@ -403,7 +403,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+                <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
                   <a
                     href="https://github.com/saikiran4824/Tracker-Live-Dashboard-GRAPHQL"
                     target="_blank"
@@ -455,7 +455,7 @@ export default function About() {
         </ul>
       </div>
     </div>
-    <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
+    <button className="px-6 py-1 m-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300 mt-4">
   <a
     href="https://github.com/saikiran4824/Dashboard-with-Analytics"
     target="_blank"
