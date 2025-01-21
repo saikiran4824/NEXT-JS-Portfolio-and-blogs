@@ -13,8 +13,7 @@ export default function Home() {
     Frontend Developer | React | JavaScript | Redux | MERN Stack | Typescript | HTML5 | CSS3 | jQuery | Tailwind CSS | Bootstrap | React Native | CI/CD | GitHub | Next.js | Vue.js | SASS | GraphQL | Axios | Webpack | Responsive Design | Material UI | Firebase | Figma | ESLint | Node.js
     </p>
     <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-      Strong focus on frontend development using the latest technologies like React and Next.js, I thrive on creating user-friendly, high-performance web solutions that make an impact.
-    </p>
+    Focused on frontend development with React, JavaScript, HTML5, and CSS3. I specialize in creating high-performance, user-friendly web solutions with a strong emphasis on responsive design, data visualization, and web optimization. Experienced in using tools like Redux, TypeScript, Bootstrap, Tailwind CSS, and Webpack to build scalable, maintainable applications that deliver seamless user experiences    </p>
     
 <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
   With extensive experience in building responsive user interfaces, I prioritize delivering seamless user experiences across all devices. I leverage modern design systems and frameworks to ensure intuitive, accessible, and aesthetically pleasing interfaces.

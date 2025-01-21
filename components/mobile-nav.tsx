@@ -8,10 +8,10 @@ const MobileNav = () => {
         <ul className="flex flex-col gap-4">
            
             <li>
-            <Link href="/projects" className="">Projects</Link>
+            <Link href="/projects" className="">My Projects</Link>
             </li>
             <li>
-            <Link href="/contact" className="">Contact</Link>
+            <Link href="/contact" className="">Contact Me</Link>
             </li>
             <div className="buttons gap-2 flex text-xsm">
             </div>
