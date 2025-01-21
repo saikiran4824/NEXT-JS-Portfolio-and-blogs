@@ -13,15 +13,10 @@ const MobileNav = () => {
             <Link href="/projects" className="">Projects</Link>
             </li>
             <Link href="/blog" className="">Blogs</Link>
-
             <li>
             <Link href="/contact" className="">Contact</Link>
             </li>
-
             <div className="buttons gap-2 flex text-xsm">
-
-           
- 
             </div>
         </ul>
     </div>

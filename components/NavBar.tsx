@@ -50,10 +50,9 @@ const NavBar = () => {
                 onLoaderFinished={() => setProgress(0)}
             />
             <div className='text-xl -ml-4 font-bold md:text-2xl whitespace-nowrap sm:mr-10'>
-
                <h1>
                <Link href={"/"}>
-               Sai Kiran Portfolio
+               
                 </Link>
                </h1>
             </div>
@@ -79,9 +78,6 @@ const NavBar = () => {
     </Link>
   </li>
 </ul>
-
-
-
             <ModeToggle />
             <div className="flex items-center justify-end sm:hidden">
               <Sheet>

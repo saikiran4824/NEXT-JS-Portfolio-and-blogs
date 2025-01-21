@@ -105,7 +105,6 @@ function identity<T>(arg: T): T {
 
 let output = identity<string>("myString");
 ```
-
 ## Conclusion
 
 TypeScript is an essential tool for modern web development, especially for large-scale applications. Its type safety features, along with its seamless integration with JavaScript, make it a popular choice among developers. Start incorporating TypeScript into your projects today to experience its full benefits!
