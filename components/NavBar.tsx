@@ -67,11 +67,7 @@ const NavBar = () => {
       My Projects
     </Link>
   </li>
-  <li>
-    <Link href="/blog" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300">
-      Blogs
-    </Link>
-  </li>
+  
   <li>
     <Link href="/contact" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300 md:mr-6">
       Contact
