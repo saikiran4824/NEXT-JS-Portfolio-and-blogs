@@ -52,24 +52,20 @@ const NavBar = () => {
             <div className='text-xl -ml-4 font-bold md:text-2xl whitespace-nowrap sm:mr-10'>
                <h1>
                <Link href={"/"}>
-               
+               Sai Kiran Portfolio
                 </Link>
                </h1>
             </div>
             <ul className='hidden md:flex w-full items-center -ml-4 justify-end space-x-6'>
+ 
   <li>
-    <Link href="/" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300">
-      Home
-    </Link>
-  </li>
-  <li>
-    <Link href="/projects" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300">
+    <Link href="/projects" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-gray-500 dark:hover:text-[#949290] transition-all duration-300">
       My Projects
     </Link>
   </li>
   
   <li>
-    <Link href="/contact" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-[#FC8112] dark:hover:text-[#FC8112] transition-all duration-300 md:mr-6">
+    <Link href="/contact" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-gray-500 dark:hover:text-[#949290] transition-all duration-300 md:mr-6">
       Contact
     </Link>
   </li>
