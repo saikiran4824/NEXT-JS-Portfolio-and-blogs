@@ -63,10 +63,15 @@ const NavBar = () => {
       My Projects
     </Link>
   </li>
+  <li>
+    <Link href="https://saikiran-blogs-app-prsk.vercel.app/blog" target="_blank" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-gray-500 dark:hover:text-[#949290] transition-all duration-300">
+      My Blogs
+    </Link>
+  </li>
   
   <li>
     <Link href="/contact" className="text-lg font-semibold text-gray-800 dark:text-white hover:text-gray-500 dark:hover:text-[#949290] transition-all duration-300 md:mr-6">
-      Contact
+      Contact Me
     </Link>
   </li>
 </ul>

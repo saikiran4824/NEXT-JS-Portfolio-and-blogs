@@ -11,6 +11,11 @@ const MobileNav = () => {
             <Link href="/projects" className="">My Projects</Link>
             </li>
             <li>
+                <Link href="https://saikiran-blogs-app-prsk.vercel.app/blog" className="" target="_blank">
+                  My Blogs
+                </Link>
+              </li>
+            <li>
             <Link href="/contact" className="">Contact Me</Link>
             </li>
             <div className="buttons gap-2 flex text-xsm">

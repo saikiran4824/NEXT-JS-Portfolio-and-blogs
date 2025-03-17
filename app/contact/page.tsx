@@ -38,17 +38,7 @@ const Contact = () => {
               </a>
             </p>
 
-            <p className="flex items-center justify-center gap-2 text-lg">
-              <a href="https://twitter.com/saikiran4824" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gray-600 dark:hover:text-gray-300">
-                <img
-                  src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg"
-                  alt="Twitter"
-                  height={20}
-                  width={20}
-                />
-                Twitter
-              </a>
-            </p>
+           
 
             <p className="flex items-center justify-center gap-2 text-lg">
               <a href="https://github.com/saikiran4824" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gray-600 dark:hover:text-gray-300">
@@ -63,18 +53,7 @@ const Contact = () => {
             </p>
           </div>
 
-          {/* Resume Button */}
-          <div className="text-center mt-4">
-            <Button className="px-6 py-2 rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-300">
-              <a
-                href="/SaiKIran-Resume (1).pdf"
-                download="Saikiran_Resume.pdf"
-                className="text-white dark:text-black"
-              >
-                Download My Resume
-              </a>
-            </Button>
-          </div>
+          
           <h2 className="text-4xl font-extrabold title-font my-6 text-center text-gray-900 dark:text-white 
   border-b-4 border-transparent hover:border-black hover:text-black 
   transition-all duration-300 ease-in-out transform hover:scale-105">
