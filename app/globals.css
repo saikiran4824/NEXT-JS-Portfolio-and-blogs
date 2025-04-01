@@ -101,3 +101,36 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 [data-highlighted-chars]{
   background-color: rgb(160, 160, 144);
 }
+/* Animation for moving and pulsating background glow */
+@keyframes bg-motion {
+  0% {
+    top: 0;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    opacity: 0.4;
+  }
+  50% {
+    top: 10%;
+    left: 25%;
+    width: 300px;
+    height: 300px;
+    opacity: 0.5;
+  }
+  100% {
+    top: 0;
+    left: 75%;
+    width: 200px;
+    height: 200px;
+    opacity: 0.4;
+  }
+}
+
+@layer utilities {
+  .animate-bg-motion {
+    animation: bg-motion 5s infinite ease-in-out;
+  }
+  .glow-effect {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+}

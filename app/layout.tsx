@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google"
+import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import SiteConfig from "@/config/site";
 import NavBar from "@/components/NavBar";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 export const metadata: Metadata = {
   title: SiteConfig.title,
@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark" // Changed from "light" to "dark"
           enableSystem
           disableTransitionOnChange
         >

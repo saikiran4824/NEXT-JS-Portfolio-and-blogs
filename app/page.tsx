@@ -1,110 +1,148 @@
 'use client';
+
 import { Button } from '@/components/ui/button';
 import Typed from 'typed.js';
 import React, { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion'; // Import Framer Motion for animations
 import Image from 'next/image';
+import './globals.css';
 
 export default function Home() {
-  // Create reference to store the DOM element containing the animation
   const el = useRef(null);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
         'Coding Enthusiast',
-        'Web Developer',
-        'Software Engineer',
-        'Frontend Developer',
-        'Full-Stack Developer',
-        'JavaScript Developer',
         'Prompt Engineer',
-        'React.js Developer',
-        'Next.js Developer',
-        'UI/UX Engineer',
-        'Tech Innovator',
-        'Open Source Contributor',
         'Problem Solver',
-        'Tech Blogger',
-        'AI-Powered Developer',
-        'TypeScript Enthusiast',
         'DevOps Enthusiast',
-        'Performance Optimizer',
-        'GraphQL Developer',
-        'API Integration Expert',
         'Agile Practitioner',
-        'Data Structures & Algorithms Enthusiast',
-        'Automation Engineer',
-        'CI/CD Specialist',
       ],
-      typeSpeed: 100,
+      typeSpeed: 80,
+      backSpeed: 50,
+      backDelay: 1500,
+      loop: true, // Enables continuous loop
     });
 
-    return () => {
-      // Destroy Typed instance during cleanup to stop animation
-      typed.destroy();
-    };
+    return () => typed.destroy(); // Cleanup to avoid memory leaks
   }, []);
 
   return (
-    <main>
-      <section className="text-gray-600 dark:text-gray-300 body-font relative">
-        <div className="bg-white dark:bg-gray-950 flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0 px-4 sm:px-10 md:px-40 lg:px-60">
-          <h2 className="text-gray-900 dark:text-white text-2xl mb-3 font-bold title-font">
-            Hey👋, I am <span className="font-semibold">SAI KIRAN RAVIRALA</span>
-          </h2>
+    <main className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl opacity-50 z-[-1] animate-bg-motion" />
 
-          {/* Container for Name and Typed Animation */}
+      <section className="text-gray-600 dark:text-gray-300 body-font relative">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="bg-white dark:bg-gray-950 flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0 px-4 sm:px-10 md:px-40 lg:px-60"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-gray-900 dark:text-white text-2xl font-bold mb-3"
+          >
+            Hey 👋, I am <span className="font-semibold">SAI KIRAN RAVIRALA</span>
+          </motion.h2>
+
           <div className="flex items-center mb-5">
-            <h1 className="text-xl leading-snug text-gray-800 dark:text-gray-200 ">
-              
+            <motion.h1
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl leading-snug text-gray-800 dark:text-gray-200"
+            >
               <span className="font-semibold underline decoration-primary">
-                <span ref={el} />
+                <span
+                  ref={el}
+                  className="text-indigo-500 dark:text-purple-400 glow-effect"
+                />
               </span>
-            </h1>
+            </motion.h1>
           </div>
 
-          {/* Skills, Technologies, and Details */}
-          <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-            <strong>Frontend:</strong> React | Redux | MERN Stack | React Native | Next.js | Vue.js | Svelte | SvelteKit | AngularJS
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <strong>Programming Languages:</strong> JavaScript, TypeScript, Python, Java, PHP
+          </motion.p>
 
-          <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-            <strong>Backend:</strong> Node.js | Java Spring Boot | PHP Laravel | Python Flask | Django | MySQL | MongoDB | GraphQL | Axios | Express.js | RESTful APIs | Docker | PostgreSQL | Redis
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-4"
+          >
+            <strong>Frontend:</strong> React, Next.js, Redux, Vue.js, Svelte, Angular, React Native, Tailwind CSS, Material UI, Chakra UI, ShadCN, Webpack, Vite, Zustand, TanStack Query, Framer Motion, Three.js, D3.js
+          </motion.p>
 
-          <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-            <strong>Other Tools & Technologies:</strong> CI/CD | GitHub | Webpack | Jenkins | Kubernetes | Nginx | AWS | Firebase | Vercel | Docker | Terraform | Postman | Jest | ESLint | GIT | Swagger | Cypress | Puppeteer | Selenium | Testing Library | Enzyme
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-4"
+          >
+            <strong>Backend:</strong> Node.js, Express.js, Django, Flask, Java Spring Boot, Laravel, FastAPI, GraphQL, RESTful APIs, PostgreSQL, MySQL, MongoDB, Redis, Prisma, Docker, Kubernetes, AWS Lambda, Firebase, Nginx
+          </motion.p>
 
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            <strong>Programming Languages:</strong> JavaScript, TypeScript, Python, Java
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-4"
+          >
+            <strong>Other Tools & Technologies:</strong> CI/CD, GitHub, Git, Terraform, Jenkins, Vercel, Postman, Swagger, Jest, Cypress, Playwright, Selenium, Enzyme, Testing Library
+          </motion.p>
 
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            <strong>Data Visualization:</strong> D3.js, Chart.js, Recharts
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mb-4"
+          >
+            <strong>Agile & Project Management:</strong> Scrum, Kanban, Jira, Notion
+          </motion.p>
 
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            <strong>Agile Methodologies:</strong> Scrum, Kanban, Jira
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-4"
+          >
+            Passionate Full-Stack Developer skilled in modern frontend & backend technologies, specializing in scalable web solutions. I develop responsive UIs with React, Next.js, and Tailwind CSS, and build robust backend systems using Django, Flask, and Spring Boot.
+          </motion.p>
 
-          <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-            As a passionate Full-Stack Developer, I specialize in creating high-performance, user-friendly web solutions with a focus on responsive design, data visualization, and web optimization. I am proficient in both frontend and backend technologies, leveraging modern tools like React, JavaScript, HTML5, and CSS3 for the frontend, and Spring Boot, Flask, and Django for building robust REST APIs on the backend.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mb-4"
+          >
+            Expertise in API development, cloud infrastructure, and DevOps tools like Docker, Kubernetes, and AWS. I collaborate effectively with teams to optimize applications for performance, accessibility, and security.
+          </motion.p>
 
-          <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-            My expertise goes beyond frontend development; I design and implement full-stack solutions that deliver intuitive, accessible, and efficient user experiences. On the frontend, I focus on creating responsive, visually appealing interfaces using modern design systems and frameworks like Material UI and Tailwind CSS. On the backend, I have hands-on experience building RESTful APIs using Spring Boot, Flask, and Django, ensuring that the data layer is robust, secure, and optimized for performance.
-          </p>
-
-          <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-            I believe that successful projects stem from effective collaboration, and as such, I work closely with cross-functional teams—designers, backend developers, and stakeholders—to ensure that all aspects of the project are aligned with business objectives. Clear communication, adaptability, and a focus on delivering high-quality results are fundamental to my approach, and I thrive in fast-paced environments where these skills are crucial for timely project delivery.
-          </p>
-
-          <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">
-            In addition to my technical expertise, I pride myself on my professional strengths. As a collaborative team player with excellent communication skills, I excel in cross-functional teams and am adept at adjusting to changing project requirements. I am results-driven, always focused on delivering high-quality, scalable solutions. With a passion for staying at the forefront of industry trends, I am open to contract roles, full-time opportunities, and collaborations, where I can contribute my expertise and drive innovation in the web development space.
-          </p>
-        </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mb-4"
+          >
+            Open to full-time and contract roles, contributing expertise in frontend, backend, and DevOps for scalable, high-performance web applications.
+          </motion.p>
+        </motion.div>
       </section>
+
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        <div className="absolute -top-10 left-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-40 animate-pulse glow-effect" />
+        <div className="absolute -bottom-20 right-1/3 w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-40 animate-pulse glow-effect" />
+      </div>
     </main>
   );
 }
+
