@@ -88,7 +88,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-4"
           >
-            <strong>Backend:</strong> Node.js, Express.js, Django, Flask, Java Spring Boot, Laravel, FastAPI, GraphQL, RESTful APIs, PostgreSQL, MySQL, MongoDB, Redis, Prisma, Docker, Kubernetes, AWS Lambda, Firebase, Nginx
+            <strong>Backend:</strong> Node.js, Express.js, Django, Flask, Java Spring Boot, Laravel, FastAPI, GraphQL, RESTful APIs, PostgreSQL, MySQL, MongoDB, Redis, Prisma, Docker, Kubernetes, AWS, Firebase, Nginx
           </motion.p>
 
           <motion.p

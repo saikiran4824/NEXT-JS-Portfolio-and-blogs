@@ -19,6 +19,7 @@ import { Menu } from 'lucide-react'
 
 const NavBar = () => {
     const [progress, setProgress] = useState(0)
+    const [isOpen, setIsOpen] = useState(false) // State to manage menu open/close
     const pathname = usePathname();
     
     useEffect(() => {
@@ -37,6 +38,11 @@ const NavBar = () => {
         }, 900);
     }, [])
     
+    // Function to handle closing the menu when a menu item is clicked
+    const handleMenuItemClick = () => {
+        setIsOpen(false); // Close the menu
+    }
+
     return (
         <nav className='h-16 bg-background/50 sticky top-0 border-b px-8 backdrop-blur flex items-center justify-between z-10'>
             <LoadingBar
@@ -76,13 +82,14 @@ const NavBar = () => {
 
             {/* Mobile Navigation Toggle (hamburger menu) */}
             <div className="flex items-center justify-end sm:block md:hidden">
-                <Sheet>
+                <Sheet open={isOpen} onOpenChange={setIsOpen}> {/* Manage open state */}
                     <SheetTrigger>
                         {/* Hamburger Menu Icon */}
                         <Menu className="text-2xl text-gray-800 dark:text-white" />
                     </SheetTrigger>
                     <SheetContent>
-                        <MobileNav />
+                        {/* Pass handleMenuItemClick to close the menu when a menu item is clicked */}
+                        <MobileNav onMenuItemClick={handleMenuItemClick} />
                     </SheetContent>
                 </Sheet>
             </div>
